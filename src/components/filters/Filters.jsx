@@ -1,11 +1,11 @@
 import FilterByName from "./FilterByName"
 
 
-function Filters() {
+function Filters({setInputName}) {
   return (
-    <div>
-      <FilterByName />
-    </div>
+    <form>
+      <FilterByName setInputName={setInputName}/>
+    </form>
   )
 }
 

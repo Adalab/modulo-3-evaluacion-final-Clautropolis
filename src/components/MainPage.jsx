@@ -2,11 +2,11 @@ import CharactersList from "./CharactersList"
 import Filters from "./filters/Filters"
 
 
-function MainPage({characters}) {
+function MainPage({characters, setInputName}) {
   return (
     <div>
-        <CharactersList characters={characters}/>
-        <Filters/>
+      <Filters setInputName={setInputName}/>
+      <CharactersList characters={characters}/>
     </div>
   )
 }

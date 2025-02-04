@@ -1,5 +1,5 @@
 
-//import '../styles/App.scss'
+import '../styles/App.scss'
 
 import MainPage from "./MainPage";
 import callToApi from "../services/api";
@@ -10,11 +10,11 @@ import { useEffect } from "react";
 function App() {
 
   const [characters, setCharacters] = useState([]);
+  const [inputName, setInputName] = useState('');
 
   useEffect(()=> {
     callToApi()
       .then((data)=> {
-        console.log(data)
         setCharacters(data)
       })
       .catch((error) => {
@@ -22,10 +22,13 @@ function App() {
       });
   }, [])
 
+  const filteredCharacters = characters.filter((character)=> character.name.toLowerCase().includes(inputName))
+
   return (
       <>
-      <h1>Esta es mi web de Harry Potter</h1>
-      <MainPage characters={characters}/>
+      <main>
+      <MainPage characters={filteredCharacters} setInputName={setInputName}/>
+      </main>
       </>
     
   );
