@@ -1,10 +1,21 @@
-.img-character{
+.character-img{
     width: 150px;
+    margin: 5px;
+    
 }
 
 .character-card{
+    
+    
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid rgb(19, 63, 99);
+    margin: 2px;
+    display: flex;
+}
+
+.character-link {
     text-decoration: none;
     color: rgb(19, 63, 99);
-    font-size: 20px;
-    font-weight: bold;
+    padding: 5px;
 }

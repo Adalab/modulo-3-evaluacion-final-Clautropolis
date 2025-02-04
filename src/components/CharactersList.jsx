@@ -1,4 +1,5 @@
 import EachCharacter from "./EachCharacter"
+import '../styles/CharactersList.scss'
 
 
 function CharactersList({characters}) {
@@ -10,7 +11,7 @@ function CharactersList({characters}) {
 
 
   return (
-    <div>
+    <div className="characters-list">
         {charactersHtml}
     </div>
   )
