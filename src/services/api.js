@@ -1,9 +1,9 @@
-const callToApi = () => {
-    // Llamamos a la API
-    return fetch("https://hp-api.onrender.com/api/characters/house/gryffindor") // 
+const callToApi = (selectHouse) => {
+    
+    return fetch(`https://hp-api.onrender.com/api/characters/house/${selectHouse}`)  
       .then((response) => response.json())
       .then((data) => {
-        // Cuando responde la API podemos limpiar los datos aquí
+        
         const result = data.map((character)=> {
           return {
           id: character.id,
