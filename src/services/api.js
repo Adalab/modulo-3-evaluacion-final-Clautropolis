@@ -1,16 +1,20 @@
 const callToApi = () => {
     // Llamamos a la API
-    return fetch("url") // 
+    return fetch("https://hp-api.onrender.com/api/characters/house/slytherin") // 
       .then((response) => response.json())
-      .then((response) => {
+      .then((data) => {
         // Cuando responde la API podemos limpiar los datos aquí
-        const result = {
-          name: response.name,
-          birthYear: response.birth_year,
-          height: response.height,
-          mass: response.mass,
-          eyeColor: response.eye_color,
+        const result = data.map((character)=> {
+          return {
+          id: character.id,
+          name: character.name,
+          species: character.species,
+          gender: character.gender,
+          house: character.house,
+          alive: character.alive,
+          img: character.image
         };
+      })
         return result;
       });
   };
