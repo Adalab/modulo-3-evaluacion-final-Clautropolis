@@ -6,7 +6,7 @@
 .detail{
     background-color: rgb(70, 1, 1);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 20px;
 
@@ -21,38 +21,46 @@
 }
 
 .detail-name{
-        grid-column: 2/2;
-        grid-row: 1/8;
-        align-self: baseline;
-        justify-self: start;
-        font-size: 30px;
-        text-decoration: underline;
-    }
+    grid-column: 2/4;
+    grid-row: 1/8;
+    align-self: baseline;
+    justify-self: center;
+    font-size: 30px;
+    text-decoration: underline;
+}
 
 .detail-alive{
-        grid-column: 2/2;
-        grid-row: 3/8;
-        align-self: baseline;
-        justify-self: start;
-    }
+    grid-column: 2/3;
+    grid-row: 3/8;
+    align-self: baseline;
+    justify-self: start;
+}
 .detail-species{
-        grid-column: 2/2;
-        grid-row: 4/8;
-        align-self: baseline;
-        justify-self: start;
-    }
+    grid-column: 2/3;
+    grid-row: 4/8;
+    align-self: baseline;
+    justify-self: start;
+}
 .detail-gender{
-        grid-column: 2/2;
-        grid-row: 5/8;
-        align-self: baseline;
-        justify-self: start;
-    }
+    grid-column: 2/3;
+    grid-row: 5/8;
+    align-self: baseline;
+    justify-self: start;
+}
 .detail-house{
-        grid-column: 2/2;
-        grid-row: 6/8;
-        align-self: baseline;
-        justify-self: start;
-    }
+    grid-column: 2/3;
+    grid-row: 6/8;
+    align-self: baseline;
+    justify-self: start;
+}
+
+.detail-altnames{
+    grid-column: 3/4;
+    grid-row: 3/7;
+    align-self: baseline;
+    justify-self: start;
+    padding: 5px;
+}
 
 
 .back-button{
@@ -69,4 +77,6 @@
         background-color: rgb(25, 43, 58);
     }
 }
+
+
 

@@ -70,10 +70,10 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
         <p className="detail-species">Especie: {speciesInSpanish}</p>
         <p className="detail-gender">Género: {genderInSpanish}</p>
         <p className="detail-house">Casa: {characterData.house}</p>
-        <ul>También conocido por: 
+        <ul className="detail-altnames">También conocido como:  
           {characterData.alternativeNames.length > 0 ? (
             characterData.alternativeNames.map((name, index) => (
-              <li key={index}>{name}</li>))) : ('')
+              <li className="each-altname" key={index}>{name}</li>))) : (' Este personaje no tiene ningún nombre alternativo')
           }
         </ul>
       </article>
