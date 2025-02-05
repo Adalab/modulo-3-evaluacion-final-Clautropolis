@@ -7,7 +7,7 @@ function EachCharacter({infoCharacter}) {
 
   return (
     <article key={infoCharacter.id} className="character-card" >
-        <Link className="character-link">
+        <Link to={`/character/${infoCharacter.id}`} className="character-link">
             <img src={imgCharacter} alt={infoCharacter.name} className="character-img"/>
             <h3>{infoCharacter.name}</h3>
             <p>{infoCharacter.species}</p>
