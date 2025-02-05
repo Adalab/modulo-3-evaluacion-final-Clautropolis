@@ -1,5 +1,6 @@
 
 import '../styles/App.scss'
+
 import localStorage from '../services/localStorage';
 import MainPage from "./MainPage";
 import callToApi from "../services/api";

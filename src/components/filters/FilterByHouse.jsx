@@ -1,4 +1,4 @@
-
+import '../../styles/FilterByHouse.scss'
 
 function FilterByHouse({setSelectHouse, selectHouse}) {
 
@@ -7,7 +7,7 @@ function FilterByHouse({setSelectHouse, selectHouse}) {
     }
   return (
     <div>
-        <label htmlFor="houseSelect">Buscar por casa:
+        <label className="filter-house" htmlFor="houseSelect">Buscar por casa:
             <select name="house" id="houseSelect" onChange={handleSelect} value={selectHouse}>
                 <option value="Gryffindor">Gryffindor</option>
                 <option value="Slytherin">Slytherin</option>

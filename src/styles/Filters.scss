@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-img {
+    width: 300px;
+    align-self: center;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    gap: 30px;
+
+}
+

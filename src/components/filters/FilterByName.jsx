@@ -1,4 +1,4 @@
-
+import '../../styles/FilterByName.scss'
 
 function FilterByName({setInputName, inputName}) {
 
@@ -7,8 +7,8 @@ function FilterByName({setInputName, inputName}) {
   }
   return (
     <div>
-      <label htmlFor="">
-        <input type="text" onChange={handleChange} value={inputName}/>Buscar por personaje:
+      <label className="filter-name" htmlFor="">Buscar por personaje: 
+        <input className="filter-name-input" type="text" onChange={handleChange} value={inputName}/>
       </label>
     </div>
   )
