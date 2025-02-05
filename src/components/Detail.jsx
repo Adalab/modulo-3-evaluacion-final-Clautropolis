@@ -9,7 +9,7 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
   const characterData = getCharacterInfo(characterId);
 
     if(!characterData) {
-      return <p>Character not found</p>
+      return <p>El personaje que buscas no existe.</p>
     }
 
     const aliveStatus = characterData.alive ? (<i className="fa-solid fa-heart-pulse"></i>) : (<i className="fa-solid fa-skull"></i>)

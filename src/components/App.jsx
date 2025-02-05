@@ -35,6 +35,16 @@ function App() {
   const filteredCharacters = characters
     .filter((character)=> character.name.toLowerCase().includes(inputName))
     .filter((character)=> character.house.includes(selectHouse))
+    .sort((characterA, characterB) => {
+      if (characterA.name > characterB.name) {
+        return 1;
+      } else if (characterA.name < characterB.name){
+        return -1;
+      } else {
+        return 0;
+      }
+    })
+      //characterA.name.localeCompare(characterB.name));
 
   const getCharacterInfo = (id) => {
     const characterFound = characters.find((character) => character.id === id)
