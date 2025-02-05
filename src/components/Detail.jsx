@@ -2,6 +2,10 @@ import { Link, useParams } from "react-router-dom"
 import localStorage from '../services/localStorage';
 import PropTypes from "prop-types"
 import '../styles/Detail.scss'
+import gryffindorImg from '../images/Gryffindor.png';
+import slytherinImg from '../images/Slytherin.png';
+import hufflepuffImg from '../images/Hufflepuff.png';
+import ravenclawImg from '../images/Ravenclaw.png';
 
 function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSelectHouse, setGenderRadio, genderRadio}) {
 
@@ -57,6 +61,13 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
       setGenderRadio(genderRadio)
     }
 
+    const houseImages = {
+      Gryffindor: gryffindorImg,
+      Hufflepuff: hufflepuffImg,
+      Slytherin: slytherinImg,
+      Ravenclaw: ravenclawImg,
+    };
+
   return (
     <div className="detail-container">
       <img src="harry-potter-logo.png" alt="Es el logo de Harry Potter"className="form-img"/>
@@ -69,7 +80,9 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
         <p className="detail-alive">Estado: {characterData.alive ? 'Vivo' : 'Muerto'} {aliveStatus}</p>
         <p className="detail-species">Especie: {speciesInSpanish}</p>
         <p className="detail-gender">Género: {genderInSpanish}</p>
-        <p className="detail-house">Casa: {characterData.house}</p>
+        <p className="detail-house">Casa: {characterData.house}
+          <img src={houseImages[characterData.house]} alt={`${characterData.house} escudo`} className="house-logo"/>
+        </p>
         <ul className="detail-altnames">También conocido como:  
           {characterData.alternativeNames.length > 0 ? (
             characterData.alternativeNames.map((name, index) => (

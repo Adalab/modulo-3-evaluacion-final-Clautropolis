@@ -9,15 +9,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 20px;
-
-    & img{
-        width: 200px;
+}
+.detail-img{
+    width: 200px;
         grid-column: 1/2;
         grid-row: 1/8;
         align-self: center;
         justify-self: center;
-
-    }
 }
 
 .detail-name{
@@ -76,6 +74,10 @@
     &:hover {
         background-color: rgb(25, 43, 58);
     }
+}
+
+.house-logo{
+    width: 35px;
 }
 
 
