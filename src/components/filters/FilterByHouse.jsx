@@ -1,4 +1,5 @@
 import '../../styles/FilterByHouse.scss'
+import PropTypes from "prop-types"
 
 function FilterByHouse({setSelectHouse, selectHouse}) {
 
@@ -17,6 +18,10 @@ function FilterByHouse({setSelectHouse, selectHouse}) {
         </label>
     </div>
   )
+}
+FilterByHouse.propTypes={
+  setSelectHouse:PropTypes.func, 
+  selectHouse:PropTypes.string
 }
 
 export default FilterByHouse

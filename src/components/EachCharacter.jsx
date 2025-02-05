@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import '../styles/EachCharacter.scss'
+import PropTypes from "prop-types"
 
 function EachCharacter({infoCharacter}) {
 
@@ -14,6 +15,10 @@ function EachCharacter({infoCharacter}) {
         </Link>
     </article>
   )
+}
+
+EachCharacter.propTypes={
+  infoCharacter:PropTypes.object
 }
 
 export default EachCharacter

@@ -1,5 +1,6 @@
 import EachCharacter from "./EachCharacter"
 import '../styles/CharactersList.scss'
+import PropTypes from "prop-types"
 
 
 function CharactersList({characters}) {
@@ -16,6 +17,9 @@ return (
         {charactersHtml}
     </div>
   )
+}
+CharactersList.propTypes={
+  characters:PropTypes.array
 }
 
 export default CharactersList

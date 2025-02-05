@@ -1,4 +1,5 @@
 import '../../styles/FilterByName.scss'
+import PropTypes from "prop-types"
 
 function FilterByName({setInputName, inputName}) {
 
@@ -12,6 +13,11 @@ function FilterByName({setInputName, inputName}) {
       </label>
     </div>
   )
+}
+
+FilterByName.propTypes={
+  setInputName:PropTypes.func,
+  inputName:PropTypes.string
 }
 
 export default FilterByName

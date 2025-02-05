@@ -15,6 +15,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [inputName, setInputName] = useState('');
   const [selectHouse, setSelectHouse] = useState('Gryffindor');
+  const [genderRadio, setGenderRadio] = useState('');
 
   useEffect(()=> {
     callToApi(selectHouse)
@@ -30,12 +31,14 @@ function App() {
 
     localStorage.set('name', inputName);
     localStorage.set('house', selectHouse);
+    localStorage.set('gender', genderRadio);
 
   }, [inputName, selectHouse])
 
   const filteredCharacters = characters
     .filter((character)=> character.name.toLowerCase().includes(inputName))
     .filter((character)=> character.house.includes(selectHouse))
+    .filter((character) => genderRadio === '' || character.gender === genderRadio)
     .sort((characterA, characterB) => {
       if (characterA.name > characterB.name) {
         return 1;
@@ -57,11 +60,11 @@ function App() {
         <Routes>
           <Route path="/" element={
 
-            <MainPage characters={filteredCharacters} setInputName={setInputName} setSelectHouse={setSelectHouse} selectHouse={selectHouse} inputName={inputName}/>
+            <MainPage characters={filteredCharacters} setInputName={setInputName} setSelectHouse={setSelectHouse} selectHouse={selectHouse} inputName={inputName} setGenderRadio={setGenderRadio} genderRadio={genderRadio}/>
 
           }/>
 
-          <Route path="/character/:characterId" element={<Detail getCharacterInfo={getCharacterInfo} selectHouse={selectHouse} inputName={inputName} setSelectHouse={setSelectHouse} setInputName={setInputName}/>}/>
+          <Route path="/character/:characterId" element={<Detail getCharacterInfo={getCharacterInfo} selectHouse={selectHouse} inputName={inputName} setSelectHouse={setSelectHouse} setInputName={setInputName} setGenderRadio={setGenderRadio} genderRadio={genderRadio}/>}/>
 
           <Route path="*" element={<h1>Page not found</h1>}/> 
         </Routes>

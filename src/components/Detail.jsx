@@ -1,8 +1,9 @@
 import { Link, useParams } from "react-router-dom"
 import '../styles/EachCharacter.scss'
 import localStorage from '../services/localStorage';
+import PropTypes from "prop-types"
 
-function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSelectHouse}) {
+function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSelectHouse, setGenderRadio, genderRadio}) {
 
   const {characterId} = useParams();
 
@@ -50,8 +51,10 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
     const handleBack = () => {
       localStorage.get('name', inputName)
       localStorage.get('house', selectHouse)
+      localStorage.get('gender', genderRadio)
       setInputName(inputName)
       setSelectHouse(selectHouse)
+      setGenderRadio(genderRadio)
     }
 
   return (
@@ -69,6 +72,16 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
       </article>
     </div>
   )
+}
+
+Detail.propTypes={
+  getCharacterInfo:PropTypes.func,
+  setInputName:PropTypes.func,
+  setSelectHouse:PropTypes.func, 
+  selectHouse:PropTypes.string,
+  inputName:PropTypes.string,
+  setGenderRadio:PropTypes.func,
+  genderRadio:PropTypes.string
 }
 
 export default Detail

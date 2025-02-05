@@ -2,9 +2,11 @@ import ResetButton from "../ResetButton";
 import FilterByHouse from "./FilterByHouse"
 import FilterByName from "./FilterByName"
 import '../../styles/Filters.scss';
+import FilterByGender from "./FilterByGender";
+import PropTypes from "prop-types"
 
 
-function Filters({setInputName, setSelectHouse, selectHouse, inputName}) {
+function Filters({setInputName, setSelectHouse, selectHouse, inputName, setGenderRadio, genderRadio}) {
 
   const handleSubmit =(ev) => {
     ev.preventDefault();
@@ -16,11 +18,21 @@ function Filters({setInputName, setSelectHouse, selectHouse, inputName}) {
       <div className="form-input">
         <FilterByName setInputName={setInputName} inputName={inputName}/>
         <FilterByHouse setSelectHouse={setSelectHouse} selectHouse={selectHouse}/>
-        <ResetButton setInputName={setInputName} setSelectHouse={setSelectHouse}/>
+        <FilterByGender setGenderRadio={setGenderRadio} genderRadio={genderRadio}/>
+        <ResetButton setInputName={setInputName} setSelectHouse={setSelectHouse} setGenderRadio={setGenderRadio}/>
       </div>
       
     </form>
   )
+}
+
+Filters.propTypes={
+  setInputName:PropTypes.func,
+  setSelectHouse:PropTypes.func, 
+  selectHouse:PropTypes.string,
+  inputName:PropTypes.string,
+  setGenderRadio:PropTypes.func,
+  genderRadio:PropTypes.string
 }
 
 export default Filters
