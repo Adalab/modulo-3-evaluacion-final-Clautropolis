@@ -6,6 +6,7 @@ import gryffindorImg from '../images/Gryffindor.png';
 import slytherinImg from '../images/Slytherin.png';
 import hufflepuffImg from '../images/Hufflepuff.png';
 import ravenclawImg from '../images/Ravenclaw.png';
+import harryPotterLogo from '../images/harry-potter-logo.png'
 
 function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSelectHouse, setGenderRadio, genderRadio}) {
 
@@ -70,7 +71,7 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
 
   return (
     <div className="detail-container">
-      <img src="harry-potter-logo.png" alt="Es el logo de Harry Potter"className="form-img"/>
+      <img src={harryPotterLogo} alt="Es el logo de Harry Potter"className="form-img"/>
       <Link to={'/'}>
         <button className="back-button" onClick={handleBack}><i className="fa-solid fa-arrow-left"></i>Volver</button>
       </Link>
