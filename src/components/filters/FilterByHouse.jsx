@@ -1,6 +1,6 @@
 
 
-function FilterByHouse({setSelectHouse}) {
+function FilterByHouse({setSelectHouse, selectHouse}) {
 
     const handleSelect = (ev) => {
         setSelectHouse(ev.target.value)
@@ -8,7 +8,7 @@ function FilterByHouse({setSelectHouse}) {
   return (
     <div>
         <label htmlFor="houseSelect">Buscar por casa:
-            <select name="house" id="houseSelect" onChange={handleSelect}>
+            <select name="house" id="houseSelect" onChange={handleSelect} value={selectHouse}>
                 <option value="Gryffindor">Gryffindor</option>
                 <option value="Slytherin">Slytherin</option>
                 <option value="Hufflepuff">Hufflepuff</option>

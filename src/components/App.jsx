@@ -1,6 +1,6 @@
 
 import '../styles/App.scss'
-
+import localStorage from '../services/localStorage';
 import MainPage from "./MainPage";
 import callToApi from "../services/api";
 import { useState } from "react";
@@ -25,6 +25,13 @@ function App() {
       });
   }, [inputName, selectHouse])
 
+  useEffect(()=> {
+
+    localStorage.set('name', inputName);
+    localStorage.set('house', selectHouse);
+
+  }, [inputName, selectHouse])
+
   const filteredCharacters = characters
     .filter((character)=> character.name.toLowerCase().includes(inputName))
     .filter((character)=> character.house.includes(selectHouse))
@@ -39,11 +46,11 @@ function App() {
         <Routes>
           <Route path="/" element={
 
-            <MainPage characters={filteredCharacters} setInputName={setInputName} setSelectHouse={setSelectHouse}/>
+            <MainPage characters={filteredCharacters} setInputName={setInputName} setSelectHouse={setSelectHouse} selectHouse={selectHouse} inputName={inputName}/>
 
           }/>
-          
-          <Route path="/character/:characterId" element={<Detail getCharacterInfo={getCharacterInfo}/>}/>
+
+          <Route path="/character/:characterId" element={<Detail getCharacterInfo={getCharacterInfo} selectHouse={selectHouse} inputName={inputName} setSelectHouse={setSelectHouse} setInputName={setInputName}/>}/>
 
           <Route path="*" element={<h1>Page not found</h1>}/> 
         </Routes>
