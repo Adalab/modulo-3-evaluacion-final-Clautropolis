@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom"
-import '../styles/EachCharacter.scss'
 import localStorage from '../services/localStorage';
 import PropTypes from "prop-types"
+import '../styles/Detail.scss'
 
 function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSelectHouse, setGenderRadio, genderRadio}) {
 
@@ -58,17 +58,24 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
     }
 
   return (
-    <div>
+    <div className="detail-container">
+      <img src="harry-potter-logo.png" alt="Es el logo de Harry Potter"className="form-img"/>
       <Link to={'/'}>
-        <button onClick={handleBack}><i className="fa-solid fa-arrow-left"></i>Volver</button>
+        <button className="back-button" onClick={handleBack}><i className="fa-solid fa-arrow-left"></i>Volver</button>
       </Link>
-      <article>
-        <img src={imgDetail} alt={characterData.name} className="character-img"/>
-        <h3>{characterData.name}</h3>
-        <p>Estado: {characterData.alive ? 'Vivo' : 'Muerto'} {aliveStatus}</p>
-        <p>Especie: {speciesInSpanish}</p>
-        <p>Género: {genderInSpanish}</p>
-        <p>Casa: {characterData.house}</p>
+      <article className="detail">
+        <img src={imgDetail} alt={characterData.name} className="detail-img"/>
+        <h3 className="detail-name">{characterData.name}</h3>
+        <p className="detail-alive">Estado: {characterData.alive ? 'Vivo' : 'Muerto'} {aliveStatus}</p>
+        <p className="detail-species">Especie: {speciesInSpanish}</p>
+        <p className="detail-gender">Género: {genderInSpanish}</p>
+        <p className="detail-house">Casa: {characterData.house}</p>
+        <ul>También conocido por: 
+          {characterData.alternativeNames.length > 0 ? (
+            characterData.alternativeNames.map((name, index) => (
+              <li key={index}>{name}</li>))) : ('')
+          }
+        </ul>
       </article>
     </div>
   )

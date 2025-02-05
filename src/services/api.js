@@ -12,7 +12,8 @@ const callToApi = (selectHouse) => {
           gender: character.gender,
           house: character.house,
           alive: character.alive,
-          img: character.image
+          img: character.image,
+          alternativeNames: character.alternate_names
         };
       })
         return result;
