@@ -84,12 +84,18 @@ function Detail({getCharacterInfo, selectHouse, inputName, setInputName, setSele
         <p className="detail-house">Casa: {characterData.house}
           <img src={houseImages[characterData.house]} alt={`${characterData.house} escudo`} className="house-logo"/>
         </p>
-        <ul className="detail-altnames">También conocido como:  
+        {/* <ul className="detail-altnames">También conocido como:  
           {characterData.alternativeNames.length > 0 ? (
             characterData.alternativeNames.map((name, index) => (
               <li className="each-altname" key={index}>{name}</li>))) : (' Este personaje no tiene ningún nombre alternativo')
           }
-        </ul>
+        </ul> */}
+          {characterData.alternativeNames.length > 0 && (
+            <ul className="detail-altnames">Otros nombres: 
+            {characterData.alternativeNames.map((name, index) => (
+            <li className="each-altname" key={index}>{name}</li>))}
+          </ul>
+          )}
       </article>
     </div>
   )
