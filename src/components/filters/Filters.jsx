@@ -15,7 +15,9 @@ function Filters({setInputName, setSelectHouse, selectHouse, inputName, setGende
   }
   return (
     <form onSubmit={handleSubmit} className="form">
+
       <img src={harryPotterLogo} alt="Es el logo de Harry Potter"className="form-img"/>
+      
       <div className="form-input">
         <FilterByName setInputName={setInputName} inputName={inputName}/>
         <FilterByHouse setSelectHouse={setSelectHouse} selectHouse={selectHouse}/>

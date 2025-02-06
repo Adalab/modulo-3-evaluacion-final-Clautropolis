@@ -8,8 +8,8 @@ function FilterByName({setInputName, inputName}) {
   }
   return (
     <div>
-      <label className="filter-name" htmlFor="">Buscar por personaje: 
-        <input className="filter-name-input" type="text" onChange={handleChange} value={inputName}/>
+      <label className="filter-name" htmlFor="characterName">Buscar por personaje: 
+        <input id="characterName" className="filter-name-input" type="text" onChange={handleChange} value={inputName}/>
       </label>
     </div>
   )

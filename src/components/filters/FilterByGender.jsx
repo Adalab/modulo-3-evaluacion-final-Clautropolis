@@ -8,9 +8,9 @@ function FilterByGender({setGenderRadio, genderRadio}) {
     }
   return (
     <div>
-        <label htmlFor="">Selecciona un género:</label>
+        <label htmlFor="genderSelect">Selecciona un género:</label>
         <div>
-            <label htmlFor="">Masculino</label>
+            <label htmlFor="male">Masculino</label>
             <input type="radio"
             name="genderRadio"
             id="male"
@@ -19,7 +19,7 @@ function FilterByGender({setGenderRadio, genderRadio}) {
             onChange={handleGenderFilter}/>
         </div>
         <div>
-            <label htmlFor="">Femenino</label>
+            <label htmlFor="female">Femenino</label>
             <input type="radio"
             name="genderRadio"
             id="female"
