@@ -9,13 +9,21 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 20px;
+    color: rgb(143, 104, 7);
+
+    @media (max-width: 570px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+
 }
 .detail-img{
     width: 200px;
-        grid-column: 1/2;
-        grid-row: 1/8;
-        align-self: center;
-        justify-self: center;
+    grid-column: 1/2;
+    grid-row: 1/8;
+    align-self: center;
+    justify-self: center;
 }
 
 .detail-name{
@@ -25,6 +33,7 @@
     justify-self: center;
     font-size: 30px;
     text-decoration: underline;
+
 }
 
 .detail-alive{
