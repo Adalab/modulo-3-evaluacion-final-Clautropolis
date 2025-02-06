@@ -33,7 +33,7 @@ function App() {
     localStorage.set('house', selectHouse);
     localStorage.set('gender', genderRadio);
 
-  }, [inputName, selectHouse])
+  }, [inputName, selectHouse, genderRadio])
 
   const filteredCharacters = characters
     .filter((character)=> character.name.toLowerCase().includes(inputName))
@@ -48,7 +48,6 @@ function App() {
         return 0;
       }
     })
-      //characterA.name.localeCompare(characterB.name));
 
   const getCharacterInfo = (id) => {
     const characterFound = characters.find((character) => character.id === id)

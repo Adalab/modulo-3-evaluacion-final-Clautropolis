@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import '../../styles/FilterByGender.scss'
 
 function FilterByGender({setGenderRadio, genderRadio}) {
 
@@ -7,9 +8,9 @@ function FilterByGender({setGenderRadio, genderRadio}) {
         setGenderRadio(radioResponse)
     }
   return (
-    <div>
-        <label htmlFor="genderSelect">Selecciona un género:</label>
-        <div>
+    <div className="gender-filter">
+        <h4>Selecciona un género:</h4>
+        <div className="gender-select">
             <label htmlFor="male">Masculino</label>
             <input type="radio"
             name="genderRadio"
@@ -18,7 +19,7 @@ function FilterByGender({setGenderRadio, genderRadio}) {
             checked={genderRadio === "male"}
             onChange={handleGenderFilter}/>
         </div>
-        <div>
+        <div className="gender-select">
             <label htmlFor="female">Femenino</label>
             <input type="radio"
             name="genderRadio"
